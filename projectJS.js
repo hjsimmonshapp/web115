@@ -9,13 +9,55 @@ function generateMealPlan() {
     }
   
     var meals = {
-      Monday: ["Breakfast", "Snack", "Lunch", "Snack", "Dinner"],
-      Tuesday: ["Breakfast", "Snack", "Lunch", "Snack", "Dinner"],
-      Wednesday: ["Breakfast", "Snack", "Lunch", "Snack", "Dinner"],
-      Thursday: ["Breakfast", "Snack", "Lunch", "Snack", "Dinner"],
-      Friday: ["Breakfast", "Snack", "Lunch", "Snack", "Dinner"],
-      Saturday: ["Breakfast", "Snack", "Lunch", "Snack", "Dinner"],
-      Sunday: ["Breakfast", "Snack", "Lunch", "Snack", "Dinner"]
+      Monday: {
+        Breakfast: document.getElementById("mondayBreakfast").value,
+        Snack: document.getElementById("mondaySnack").value,
+        Lunch: document.getElementById("mondayLunch").value,
+        SecondSnack: document.getElementById("mondaySecondSnack").value,
+        Dinner: document.getElementById("mondayDinner").value
+      },
+      Tuesday: {
+        Breakfast: document.getElementById("tuesdayBreakfast").value,
+        Snack: document.getElementById("tuesdaySnack").value,
+        Lunch: document.getElementById("tuesdayLunch").value,
+        SecondSnack: document.getElementById("tuesdaySecondSnack").value,
+        Dinner: document.getElementById("tuesdayDinner").value
+      },
+      Wednesday: {
+        Breakfast: document.getElementById("wednesdayBreakfast").value,
+        Snack: document.getElementById("wednesdaySnack").value,
+        Lunch: document.getElementById("wednesdayLunch").value,
+        SecondSnack: document.getElementById("wednesdaySecondSnack").value,
+        Dinner: document.getElementById("wednesdayDinner").value
+      },
+      Thursday: {
+        Breakfast: document.getElementById("thursdayBreakfast").value,
+        Snack: document.getElementById("thursdaySnack").value,
+        Lunch: document.getElementById("thursdayLunch").value,
+        SecondSnack: document.getElementById("thursdaySecondSnack").value,
+        Dinner: document.getElementById("thursdayDinner").value
+      },
+      Friday: {
+        Breakfast: document.getElementById("fridayBreakfast").value,
+        Snack: document.getElementById("fridaySnack").value,
+        Lunch: document.getElementById("fridayLunch").value,
+        SecondSnack: document.getElementById("fridaySecondSnack").value,
+        Dinner: document.getElementById("fridayDinner").value
+      },
+      Saturday: {
+        Breakfast: document.getElementById("saturdayBreakfast").value,
+        Snack: document.getElementById("saturdaySnack").value,
+        Lunch: document.getElementById("saturdayLunch").value,
+        SecondSnack: document.getElementById("saturdaySecondSnack").value,
+        Dinner: document.getElementById("saturdayDinner").value
+      },
+      Sunday: {
+        Breakfast: document.getElementById("sundayBreakfast").value,
+        Snack: document.getElementById("sundaySnack").value,
+        Lunch: document.getElementById("sundayLunch").value,
+        SecondSnack: document.getElementById("sundaySecondSnack").value,
+        Dinner: document.getElementById("sundayDinner").value
+      }
     };
   
     var htmlContent = "<html><head><title>Meal Plan</title>";
@@ -25,17 +67,15 @@ function generateMealPlan() {
     htmlContent += "<h2>Name: " + name + "</h2>";
     htmlContent += "<h2>Email: " + email + "</h2>";
     htmlContent += "<h2>Goal: " + goal + "</h2>";
-    htmlContent += "<table><thead><tr><th>Day</th><th>Meals</th></tr></thead><tbody>";
+    htmlContent += "<table><thead><tr><th>Day</th><th>Breakfast</th><th>Snack</th><th>Lunch</th><th>Snack</th><th>Dinner</th></tr></thead><tbody>";
   
     for (var day in meals) {
-      htmlContent += "<tr><td>" + day + "</td><td>";
-      htmlContent += "<ul>";
-  
-      meals[day].forEach(function (meal) {
-        htmlContent += "<li>" + meal + "</li>";
-      });
-  
-      htmlContent += "</ul></td></tr>";
+      htmlContent += "<tr><td>" + day + "</td>";
+      htmlContent += "<td>" + meals[day].Breakfast + "</td>";
+      htmlContent += "<td>" + meals[day].Snack + "</td>";
+      htmlContent += "<td>" + meals[day].Lunch + "</td>";
+      htmlContent += "<td>" + meals[day].SecondSnack + "</td>";
+      htmlContent += "<td>" + meals[day].Dinner + "</td></tr>";
     }
   
     htmlContent += "</tbody></table>";

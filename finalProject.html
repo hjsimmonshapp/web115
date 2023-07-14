@@ -14,8 +14,8 @@
       text-shadow: -1px -1px 1px #7e7c7c, 1px -1px 1px #7e7c7c, -1px 1px 1px #7e7c7c, 1px 1px 1px #7e7c7c;
     }
     #banner p {
-      font-size: 24px; /* Adjust the font size as desired */
-      margin: 8px 0; /* Adjust the margin as desired */
+      font-size: 24px; 
+      margin: 8px 0; 
     }
   </style>
   <script>
@@ -34,8 +34,6 @@
       });
       isTextVisible = !isTextVisible;
     }
-
-    // Toggle text visibility every 3 seconds
     intervalId = setInterval(toggleTextVisibility, 3000);
   </script>
 </head>
@@ -46,7 +44,7 @@
     <p>Build Your Meal Plan</p>
   </div>
   </script>
-  <form>
+  <form id="mealPlanForm">
     <label for="name">Name:</label>
     <input type="text" id="name" required>
     <br>
@@ -55,6 +53,71 @@
     <br>
     <label for="goal">Goal for the Week:</label>
     <input type="text" id="goal" required>
+    <br>
+    <table>
+      <tbody>
+        <tr>
+          <th>Day</th>
+          <td>Monday</td>
+          <td>Tuesday</td>
+          <td>Wednesday</td>
+          <td>Thursday</td>
+          <td>Friday</td>
+          <td>Saturday</td>
+          <td>Sunday</td>
+        </tr>
+        <tr>
+          <th>Breakfast</th>
+          <td><input type="text" id="mondayBreakfast" required></td>
+          <td><input type="text" id="tuesdayBreakfast" required></td>
+          <td><input type="text" id="wednesdayBreakfast" required></td>
+          <td><input type="text" id="thursdayBreakfast" required></td>
+          <td><input type="text" id="fridayBreakfast" required></td>
+          <td><input type="text" id="saturdayBreakfast" required></td>
+          <td><input type="text" id="sundayBreakfast" required></td>
+        </tr>
+        <tr>
+          <th>Snack</th>
+          <td><input type="text" id="mondaySnack" required></td>
+          <td><input type="text" id="tuesdaySnack" required></td>
+          <td><input type="text" id="wednesdaySnack" required></td>
+          <td><input type="text" id="thursdaySnack" required></td>
+          <td><input type="text" id="fridaySnack" required></td>
+          <td><input type="text" id="saturdaySnack" required></td>
+          <td><input type="text" id="sundaySnack" required></td>
+        </tr>
+        <tr>
+          <th>Lunch</th>
+          <td><input type="text" id="mondayLunch" required></td>
+          <td><input type="text" id="tuesdayLunch" required></td>
+          <td><input type="text" id="wednesdayLunch" required></td>
+          <td><input type="text" id="thursdayLunch" required></td>
+          <td><input type="text" id="fridayLunch" required></td>
+          <td><input type="text" id="saturdayLunch" required></td>
+          <td><input type="text" id="sundayLunch" required></td>
+        </tr>
+        <tr>
+          <th>Snack</th>
+          <td><input type="text" id="mondaySecondSnack" required></td>
+          <td><input type="text" id="tuesdaySecondSnack" required></td>
+          <td><input type="text" id="wednesdaySecondSnack" required></td>
+          <td><input type="text" id="thursdaySecondSnack" required></td>
+          <td><input type="text" id="fridaySecondSnack" required></td>
+          <td><input type="text" id="saturdaySecondSnack" required></td>
+          <td><input type="text" id="sundaySecondSnack" required></td>
+        </tr>
+        <tr>
+          <th>Dinner</th>
+          <td><input type="text" id="mondayDinner" required></td>
+          <td><input type="text" id="tuesdayDinner" required></td>
+          <td><input type="text" id="wednesdayDinner" required></td>
+          <td><input type="text" id="thursdayDinner" required></td>
+          <td><input type="text" id="fridayDinner" required></td>
+          <td><input type="text" id="saturdayDinner" required></td>
+          <td><input type="text" id="sundayDinner" required></td>
+        </tr>
+      </tbody>
+    </table>
     <br>
     <button type="button" onclick="generateMealPlan()">Generate Meal Plan</button>
   </form>
