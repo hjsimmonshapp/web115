@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WEB-115 Final Project</title>
+  <script src="projectJS.js"></script>
+  <style>
+    #banner {
+      background-color: #E8DAEF;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      color: #ffffff;
+      font-family: 'Didot', cursive;
+      text-shadow: -1px -1px 1px #7e7c7c, 1px -1px 1px #7e7c7c, -1px 1px 1px #7e7c7c, 1px 1px 1px #7e7c7c;
+    }
+    #banner p {
+      font-size: 24px; /* Adjust the font size as desired */
+      margin: 8px 0; /* Adjust the margin as desired */
+    }
+  </style>
+  <script>
+    var banner = document.getElementById("banner");
+    var intervalId;
+    var isTextVisible = true;
+
+    function toggleTextVisibility() {
+      var textElements = banner.querySelectorAll("p");
+      textElements.forEach(function (element) {
+        if (isTextVisible) {
+          element.style.display = "none";
+        } else {
+          element.style.display = "block";
+        }
+      });
+      isTextVisible = !isTextVisible;
+    }
+
+    // Toggle text visibility every 3 seconds
+    intervalId = setInterval(toggleTextVisibility, 3000);
+  </script>
+</head>
+<body>
+  <div id="banner">
+    <p>Haley Simmons-Happ</p>
+    <p>WEB.115.0003</p>
+    <p>Build Your Meal Plan</p>
+  </div>
+  </script>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" required>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+    <br>
+    <label for="goal">Goal for the Week:</label>
+    <input type="text" id="goal" required>
+    <br>
+    <button type="button" onclick="generateMealPlan()">Generate Meal Plan</button>
+  </form>
+</body>
+</html>
