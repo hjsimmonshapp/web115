@@ -1,125 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>WEB-115 Final Project</title>
-  <script src="projectJS.js"></script>
-  <style>
-    #banner {
-      background-color: #E8DAEF;
-      padding: 10px;
-      text-align: center;
-      font-weight: bold;
-      color: #ffffff;
-      font-family: 'Didot', cursive;
-      text-shadow: -1px -1px 1px #7e7c7c, 1px -1px 1px #7e7c7c, -1px 1px 1px #7e7c7c, 1px 1px 1px #7e7c7c;
-    }
-    #banner p {
-      font-size: 24px; 
-      margin: 8px 0; 
-    }
-  </style>
-  <script>
-    var banner = document.getElementById("banner");
-    var intervalId;
-    var isTextVisible = true;
-
-    function toggleTextVisibility() {
-      var textElements = banner.querySelectorAll("p");
-      textElements.forEach(function (element) {
-        if (isTextVisible) {
-          element.style.display = "none";
-        } else {
-          element.style.display = "block";
+    <meta charset="UTF-8">
+    <title>WEB-115 Final Project</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Optional CSS file -->
+    <script src="projectJS.js"></script> <!-- Link to external JS file -->
+    <style>
+        body {
+            background: linear-gradient(to top, #FF6F61, #FFD194); /* Sunset gradient */
+            font-family: 'Arial', sans-serif; /* Easy-to-read font */
+            color: white; /* White text for visibility on sunset colors */
         }
-      });
-      isTextVisible = !isTextVisible;
-    }
-    intervalId = setInterval(toggleTextVisibility, 3000);
-  </script>
+        .banner {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for the banner */
+            border-bottom: 2px solid white; /* Add a border at the bottom */
+        }
+        .meal-planner {
+            margin: 20px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3); /* Light background for the planner */
+            border-radius: 10px; /* Rounded corners */
+        }
+        label {
+            display: block; /* Each label on a new line */
+            font-weight: bold; /* Make labels bold */
+        }
+        input {
+            width: 100%; /* Make input fields full-width */
+            padding: 8px; /* Padding for comfort */
+            margin-bottom: 10px; /* Space between inputs */
+            border: none; /* No border */
+            border-radius: 5px; /* Smooth corners */
+            background: rgba(255, 255, 255, 0.2); /* Transparent white background for inputs */
+            color: white; /* White text */
+        }
+        button {
+            padding: 10px 20px; /* Padding for buttons */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            background: #FF6F61; /* Sunset color for buttons */
+            color: white; /* White text for buttons */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: all 0.3s; /* Smooth transition for hover effects */
+        }
+        button:hover {
+            background: #FFD194; /* Change background on hover */
+            color: black; /* Dark text on hover */
+        }
+    </style>
 </head>
 <body>
-  <div id="banner">
-    <p>Haley Simmons-Happ</p>
-    <p>WEB.115.0003</p>
-    <p>Build Your Meal Plan</p>
-  </div>
-  </script>
-  <form id="mealPlanForm">
-    <label for="name">Name:</label>
-    <input type="text" id="name" required>
-    <br>
-    <label for="email">Email:</label>
-    <input type="email" id="email" required>
-    <br>
-    <label for="goal">Goal for the Week:</label>
-    <input type="text" id="goal" required>
-    <br>
-    <table>
-      <tbody>
-        <tr>
-          <th>Day</th>
-          <td>Monday</td>
-          <td>Tuesday</td>
-          <td>Wednesday</td>
-          <td>Thursday</td>
-          <td>Friday</td>
-          <td>Saturday</td>
-          <td>Sunday</td>
-        </tr>
-        <tr>
-          <th>Breakfast</th>
-          <td><input type="text" id="mondayBreakfast" required></td>
-          <td><input type="text" id="tuesdayBreakfast" required></td>
-          <td><input type="text" id="wednesdayBreakfast" required></td>
-          <td><input type="text" id="thursdayBreakfast" required></td>
-          <td><input type="text" id="fridayBreakfast" required></td>
-          <td><input type="text" id="saturdayBreakfast" required></td>
-          <td><input type="text" id="sundayBreakfast" required></td>
-        </tr>
-        <tr>
-          <th>Snack</th>
-          <td><input type="text" id="mondaySnack" required></td>
-          <td><input type="text" id="tuesdaySnack" required></td>
-          <td><input type="text" id="wednesdaySnack" required></td>
-          <td><input type="text" id="thursdaySnack" required></td>
-          <td><input type="text" id="fridaySnack" required></td>
-          <td><input type="text" id="saturdaySnack" required></td>
-          <td><input type="text" id="sundaySnack" required></td>
-        </tr>
-        <tr>
-          <th>Lunch</th>
-          <td><input type="text" id="mondayLunch" required></td>
-          <td><input type="text" id="tuesdayLunch" required></td>
-          <td><input type="text" id="wednesdayLunch" required></td>
-          <td><input type="text" id="thursdayLunch" required></td>
-          <td><input type="text" id="fridayLunch" required></td>
-          <td><input type="text" id="saturdayLunch" required></td>
-          <td><input type="text" id="sundayLunch" required></td>
-        </tr>
-        <tr>
-          <th>Snack</th>
-          <td><input type="text" id="mondaySecondSnack" required></td>
-          <td><input type="text" id="tuesdaySecondSnack" required></td>
-          <td><input type="text" id="wednesdaySecondSnack" required></td>
-          <td><input type="text" id="thursdaySecondSnack" required></td>
-          <td><input type="text" id="fridaySecondSnack" required></td>
-          <td><input type="text" id="saturdaySecondSnack" required></td>
-          <td><input type="text" id="sundaySecondSnack" required></td>
-        </tr>
-        <tr>
-          <th>Dinner</th>
-          <td><input type="text" id="mondayDinner" required></td>
-          <td><input type="text" id="tuesdayDinner" required></td>
-          <td><input type="text" id="wednesdayDinner" required></td>
-          <td><input type="text" id="thursdayDinner" required></td>
-          <td><input type="text" id="fridayDinner" required></td>
-          <td><input type="text" id="saturdayDinner" required></td>
-          <td><input type="text" id="sundayDinner" required></td>
-        </tr>
-      </tbody>
-    </table>
-    <br>
-    <button type="button" onclick="generateMealPlan()">Generate Meal Plan</button>
-  </form>
+    <div class="banner">
+        <h1>Build Your Meal Plan</h1>
+        <p>Haley Simmons-Happ - Course: WEB-115, Section: 0001</p> <!-- Example banner content -->
+    </div>
+
+    <div class="meal-planner">
+        <form id="mealPlanForm" onsubmit="return generateMealPlan(event)">
+            <h2>Personal Information</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="goal">Weekly Goal:</label>
+            <input type="text" id="goal" name="goal">
+
+            <h2>Weekly Meal Plan</h2>
+            <p>Enter meals for Monday to Sunday for each category</p>
+
+            <div class="meal-input">
+                <label for="breakfast">Breakfast:</label>
+                <input type="text" id="breakfast" name="breakfast" required>
+
+                <label for="snack1">Morning Snack:</label>
+                <input type="text" id="snack1" name="snack1">
+
+                <label for="lunch">Lunch:</label>
+                <input type="text" id="lunch" name="lunch" required>
+
+                <label for="snack2">Afternoon Snack:</label>
+                <input type="text" id="snack2" name="snack2">
+
+                <label for="dinner">Dinner:</label>
+                <input type="text" id="dinner" name="dinner" required>
+            </div>
+
+            <h2>Days of the Week</h2>
+            <div class="week-input">
+                <label for="monday">Monday:</label>
+                <input type="text" id="monday" name="monday" required>
+
+                <label for="tuesday">Tuesday:</label>
+                <input type="text" id="tuesday" name="tuesday" required>
+
+                <label for="wednesday">Wednesday:</label>
+                <input type="text" id="wednesday" name="wednesday" required>
+
+                <label for "thursday">Thursday:</label>
+                <input type="text" id="thursday" name="thursday" required>
+
+                <label for "friday">Friday:</label>
+                <input type="text" id="friday" name="friday" required>
+
+                <label for "saturday">Saturday:</label>
+                <input type="text" id="saturday" name="saturday" required>
+
+                <label for "sunday">Sunday:</label>
+                <input type="text" id="sunday" name="sunday" required>
+            </div>
+
+            <button type="button" onclick="clearForm()">Clear Form</button>
+            <button type="submit">Generate Meal Plan</button>
+            <button type="button" onclick="window.print()">Print Planner</button>
+        </form>
+    </div>
 </body>
 </html>
